@@ -1,0 +1,1032 @@
+<section class="pan_details_form" *ngIf="this.nomineeoptout == true">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-12 m-auto">
+        <div class="mobile_css">
+          <div class="back_cls">
+            <div class="d-flex flex-column align-items-start gap-2">
+              <h5>Declaration for SBI Securities Account</h5>
+            </div>
+          </div>
+        </div>
+        <form method="post">
+          <div class="">
+            <div class="col-lg-12 col-md-12 col-12 desktop_css">
+              <div class="d-flex align-items-start gap-2">
+                <div class="d-flex flex-column align-items-start gap-2">
+                  <h5>Declaration for SBI Securities Account</h5>
+                </div>
+              </div>
+            </div>
+            <hr class="desktop_css" />
+            <div style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              ">
+              <div style="text-align: center; margin-top: 60px; max-width: 360px">
+                <img src="assets/images/diy/TradePreference.png" />
+                <h5>
+                  You have selected the option to open account with Physical
+                  Application.
+                </h5>
+                <p>
+                  Please contact us on
+                  <a href="mailto:helpdesk@sbicapsec.com">helpdesk&#64;sbicapsec.com</a>
+                  or
+                  <span style="
+                      color: rgba(
+                        var(--bs-link-color-rgb),
+                        var(--bs-link-opacity, 1)
+                      );
+                    ">022 - 6854 5502/55</span>
+                  or visit the nearest branch
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="PersonalFormOne && !this.nomineeoptout" class="pan_details_form">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-12 m-auto">
+        <div class="mobile_css">
+          <div class="back_cls">
+            <div *ngIf="this.RejectStatus != 'R'" (click)="redirectSignature()">
+              <img src="assets/images/diy/ChevronLeft.png" alt="" /> Back
+            </div>
+
+            <div *ngIf="this.RejectStatus === 'R'" class="back_cls2"></div>
+
+            <div class="mobile_header_padding">
+              <div class="help_faq_css">
+                <div class="d-flex gap-2">
+                  <div class="d-flex flex-column gap-2">
+                    <h5>Add Nominee for your investments</h5>
+                  </div>
+                </div>
+                <div>
+                  <div class="help_btn" (click)="faqHelpBtn('Nominee')">Need Help?</div>
+                </div>
+              </div>
+              <p class="sub_title">
+                You can add up to 10 nominees for your demat account.
+              </p>
+            </div>
+          </div>
+        </div>
+        <form class="nominee_form" method="post">
+          <div class="div">
+            <div class="col-lg-12 col-md-12 col-12 desktop_css">
+              <div class="d-flex align-items-start gap-2">
+                <div *ngIf="this.RejectStatus != 'R'" (click)="redirectSignature()">
+                  <span><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span>
+                </div>
+                <div class="mobile_header_padding">
+                  <div class="help_faq_css">
+                    <div class="d-flex gap-2">
+                      <div class="d-flex flex-column gap-2">
+                        <h5>Add Nominee for your investments</h5>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="help_btn" (click)="faqHelpBtn('Nominee')">
+                        Need Help?
+                      </div>
+                    </div>
+                  </div>
+                  <p class="sub_title">
+                    You can add up to 10 nominees for your demat account.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <hr class="desktop_css" />
+          </div>
+
+          <div class="nominee_front_msg">
+            <p>
+              Nominee will receive your investment in the event of unforeseen circumstances. Adding a nominee is
+              mandatory in compliance with regulatory requirements.
+            </p>
+            <img class="" src="assets/images/diy/asian-family.png" alt="" />
+          </div>
+          <div class="btn_align stickybtn_desk desktop_css">
+            <button id="btn_opt" class="btn_cls_outline" type="submit" (click)="getMobileOtp(false);">
+              I wish to Opt out
+            </button>
+
+            <button (click)="redirectToTwo()" class="btn btn_cls">
+              Add Nominee
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="btn_align stickybtn mobile_css">
+        <button id="btn_opt" class="btn_cls_outline" type="submit" (click)="getMobileOtp(false);">
+          I wish to Opt out
+        </button>
+
+        <button (click)="redirectToTwo()" class="btn btn_cls">
+          Add Nominee
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trading Preference Acceptance Modal -->
+  <div class="modal fade uploadPan" id="confirmPref" tabindex="-1" aria-labelledby="confirmPrefLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h5 class="text-start" style="padding: 20px; padding-left: 2px">
+            Proceed to opt out from nominee
+          </h5>
+
+          <p>
+            If you wish to Optout for Nomination while opening account with us,
+            <span style="font-weight: bold">account needs to be opened using Physical form</span>
+          </p>
+
+          <div style="margin-top: 25px; display: flex" class="modal-footer p-0">
+            <!-- <div class="btn_align"> -->
+            <button style="flex: 1" class="btn_cls_outline" data-bs-toggle="modal" data-bs-dismiss="modal"
+              (click)="terminateModal()">
+              Optout
+            </button>
+            <button style="flex: 1" class="btn btn_cls" data-bs-toggle="modal" data-bs-dismiss="modal"
+              (click)="DoNotChange()">
+              Continue adding nominee
+            </button>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="PersonalFormTwo" class="pan_details_form">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-12 m-auto">
+        <div class="mobile_css">
+          <div class="back_cls">
+            <div (click)="BackToOne()">
+              <img src="assets/images/diy/ChevronLeft.png" alt="" /> Back
+            </div>
+
+            <!-- <div *ngIf="this.RejectStatus === 'R'" class="back_cls2"></div> -->
+            <div class="mobile_header_padding">
+              <div class="help_faq_css">
+                <div class="d-flex gap-2">
+                  <div class="d-flex flex-column gap-2">
+                    <h5>Add Nominee for your investments</h5>
+                  </div>
+                </div>
+                <div>
+                  <div class="help_btn" (click)="faqHelpBtn('Nominee')">Need Help?</div>
+                </div>
+              </div>
+              <p class="sub_title">
+                You can add up to 10 nominees for your demat account.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <form action="" method="post">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 pb-3 desktop_css">
+              <div class="d-flex align-items-start gap-2">
+                <div (click)="BackToOne()">
+                  <span><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span>
+                </div>
+                <!-- <div class="d-flex flex-column align-items-start gap-2">
+                  <h5>Add Nominee for your investments</h5>
+                  <p class="sub_title">
+                    You can add up to 3 nominees for your demat account.
+                  </p>
+                </div> -->
+                <div class="mobile_header_padding">
+                  <div class="help_faq_css">
+                    <div class="d-flex gap-2">
+                      <div class="d-flex flex-column gap-2">
+                        <h5>Add Nominee for your investments</h5>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="help_btn" (click)="faqHelpBtn('Nominee')">Need Help?</div>
+                    </div>
+                  </div>
+                  <p class="sub_title">
+                    You can add up to 10 nominees for your demat account.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <hr class="desktop_css" />
+            <div class="nominee_margin">
+
+
+              <div [formGroup]="nomineeForm">
+                <div formArrayName="nominees" class="accordion" id="nomineeAccordion">
+                  <div *ngFor="let nominee of nominees.controls; let i = index" [formGroupName]="i"
+                    class="accordion-item">
+                    <h2 class="accordion-header" id="flush-heading{{i}}">
+
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        [attr.data-bs-target]="'#flush-collapse' + i" [attr.aria-expanded]="i === 0 ? 'true' : 'false'"
+                        [ngClass]="{ 'collapsed': i !== 0 }" [attr.aria-controls]="'flush-collapse' + i">
+                        Nominee {{ i + 1 }}
+                        <span class="acc_counter ms-2">
+                          {{ nominee.get('allocation')?.value + ' %' }}
+                        </span>
+                        <span class="acc_remove ms-2" (click)="removeNominee(i)" *ngIf="nominees.length > 1">
+
+                          <!-- <img src="assets/images/diy/trash.png" alt="" /> -->
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path fill="#ffffff"
+                              d="M262.2 48C248.9 48 236.9 56.3 232.2 68.8L216 112L120 112C106.7 112 96 122.7 96 136C96 149.3 106.7 160 120 160L520 160C533.3 160 544 149.3 544 136C544 122.7 533.3 112 520 112L424 112L407.8 68.8C403.1 56.3 391.2 48 377.8 48L262.2 48zM128 208L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 208L464 208L464 512C464 520.8 456.8 528 448 528L192 528C183.2 528 176 520.8 176 512L176 208L128 208zM288 280C288 266.7 277.3 256 264 256C250.7 256 240 266.7 240 280L240 456C240 469.3 250.7 480 264 480C277.3 480 288 469.3 288 456L288 280zM400 280C400 266.7 389.3 256 376 256C362.7 256 352 266.7 352 280L352 456C352 469.3 362.7 480 376 480C389.3 480 400 469.3 400 456L400 280z" />
+                          </svg>
+
+                        </span>
+
+                      </button>
+                    </h2>
+
+                    <div [id]="'flush-collapse' + i" class="accordion-collapse collapse" [ngClass]="{ 'show': i === 0 }"
+                      [attr.aria-labelledby]="'flush-heading' + i" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                        <div class="nominee_section">
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-12">
+                              <div class="nominee_radio">
+                                <div class="nominee_label">
+                                  <label>Nominee Address Type:</label>
+                                </div>
+                                <div class="nominee_radio_align">
+                                  <div class="radio_input">
+                                    <input type="radio" formControlName="nomineeAddressType" value="RI" /> RI
+                                  </div>
+                                  <div class="radio_input">
+                                    <input type="radio" formControlName="nomineeAddressType" value="NRI" /> NRI/OCI/PIO
+                                  </div>
+                                  <div class="error"
+                                    *ngIf="nominee.get('nomineeAddressType')?.invalid && nominee.get('nomineeAddressType')?.touched">
+                                    <span>Nominee Address Type is required.</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                                <!-- First Name -->
+                                <label for="firstName" class="form-label">First Name:</label>
+                                <input type="text" id="fname" name="nomineefname" formControlName="firstName"
+                                  class="form-control" placeholder="" (input)="
+            checkInput($event);
+          " (keypress)="onKeyPressNS($event)"
+                                  onkeypress="return !/^\s$/.test(event.key) || event.target.value.length > 0 "
+                                  maxlength="50" appEmojiBlocker />
+                                <div class="error"
+                                  *ngIf="nominee.get('firstName')?.invalid && nominee.get('firstName')?.touched">
+                                  <span *ngIf="nominee.get('firstName')?.errors?.['required']">First Name is
+                                    required.</span>
+                                  <span *ngIf="nominee.get('firstName')?.errors?.['minlength']">Minimum 3 characters
+                                    required.</span>
+                                  <span *ngIf="nominee.get('firstName')?.errors?.['maxlength']">Maximum 50 characters
+                                    allowed.</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                                <!-- Last Name -->
+                                <label for="nomineelname" class="form-label">Last Name:</label>
+                                <input type="text" id="lname" name="nomineelname" formControlName="lastName"
+                                  class="form-control" placeholder="" (input)="
+            checkInput($event);
+          " (keypress)="onKeyPressNS($event)"
+                                  onkeypress="return !/^\s$/.test(event.key) || event.target.value.length > 0 "
+                                  maxlength="50" appEmojiBlocker />
+                                <div class="error"
+                                  *ngIf="nominee.get('lastName')?.invalid && nominee.get('lastName')?.touched">
+                                  <span *ngIf="nominee.get('lastName')?.errors?.['required']">Last Name is
+                                    required.</span>
+                                  <span *ngIf="nominee.get('lastName')?.errors?.['minlength']">Minimum 3 characters
+                                    required.</span>
+                                  <span *ngIf="nominee.get('lastName')?.errors?.['maxlength']">Maximum 50 characters
+                                    allowed.</span>
+                                </div>
+                              </div>
+                            </div>
+
+<div class="col-lg-6 col-md-6 col-12">
+  <div class="nominee_field_align">
+    <!-- Mobile -->
+    <label for="mobile" class="form-label">Mobile Number:</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="Nomobno"
+      name="Nomobno"
+      formControlName="mobile"
+      [attr.maxlength]="mobileMaxLength"    
+      [attr.minlength]="mobileMinLength"     
+      inputmode="numeric"
+      pattern="^[6-9][0-9]*$" required
+      oninput="if(!this.value.match('^[6-9][0-9]*$'))this.value='';"
+      placeholder=""
+      appEmojiBlocker
+    />
+
+    <div class="error" *ngIf="nominee.get('mobile')?.invalid && nominee.get('mobile')?.touched">
+      <span *ngIf="nominee.get('mobile')?.errors?.['required']">Mobile number is required.</span>
+      <span *ngIf="nominee.get('mobile')?.errors?.['minlength']">
+        Minimum length is {{ mobileMinLength }} digits.
+      </span>
+      <span *ngIf="nominee.get('mobile')?.errors?.['maxlength']">
+        Maximum length is {{ mobileMaxLength }} digits.
+      </span>
+      <span *ngIf="nominee.get('mobile')?.errors?.['pattern']">Enter a valid mobile number.</span>
+    </div>
+  </div>
+</div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                                <!-- Email -->
+                                <label for="NomEmail" class="form-label">Email ID:</label>
+                                <input type="text" formControlName="email" class="form-control" id="NomEmail"
+                                  name="NomEmail" aria-describedby="emailHelp" placeholder="" maxlength="50"
+                                  appEmojiBlocker />
+
+
+                                <div class="error"
+                                  *ngIf="nominee.get('email')?.invalid && nominee.get('email')?.touched">
+                                  <span *ngIf="nominee.get('email')?.errors?.['required']">Email is required.</span>
+                                  <span *ngIf="nominee.get('email')?.errors?.['email']">Enter a valid email
+                                    address.</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <!-- DOB -->
+                              <!-- <label>Date of Birth:</label>
+            <input type="date" formControlName="dob" class="form-control" /> -->
+                              <!-- class="date_alignment -->
+                              <div class="nominee_field_align">
+                                <label for="nomineedob" class="form-label">Date of Birth</label>
+
+                                
+<p-calendar
+  formControlName="dob"
+  [readonlyInput]="true"
+  [touchUI]="true"
+  [maxDate]="maxDate"
+  [dataType]="'string'"
+  dateFormat="dd/mm/yy"
+  [showTime]="false"
+  [id]="dateOfBirthId"
+  class="calendar_cls">
+</p-calendar>
+  
+
+                                <div class="error" *ngIf="nominee.get('dob')?.invalid && nominee.get('dob')?.touched">
+                                  <span>Date of Birth is required.</span>
+                                </div>
+                                <!-- <span *ngIf="Nominee1DOB" class="red_warning"
+            >Please select DOB</span
+            > -->
+                              </div>
+
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                                <!-- Relationship -->
+                                <label for="relationship" class="form-label">Relationship:</label>
+                                <select formControlName="relationship" class="form-select">
+                                  <option *ngFor="let title of NomineeOneResponse" [value]="title.relation">{{
+                                    title.relation }}</option>
+                                </select>
+                                <div class="error"
+                                  *ngIf="nominee.get('relationship')?.invalid && nominee.get('relationship')?.touched">
+                                  <span>Relationship is required.</span>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                                <!-- Identity Proof -->
+                                <label for="idProofType" class="form-label">Proof of Identity Type:</label>
+
+
+<select formControlName="idProofType" class="form-select">
+  <option
+    *ngFor="let title of (
+      nominee.get('nomineeAddressType')?.value === 'NRI'
+        ? NomineeOneProofResponse
+        : (NomineeOneProofResponse | slice:1:4)
+    )"
+    [value]="title.nom_id_poof">
+    {{ title.nom_id_poof }}
+  </option>
+</select>
+
+
+                                <div class="error"
+                                  *ngIf="nominee.get('idProofType')?.invalid && nominee.get('idProofType')?.touched">
+                                  <span>ID Proof Type is required.</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                                <label for="idProofNo" class="form-label">Identity Proof No.:</label>
+                                <input type="text" formControlName="idProofNo" class="form-control" />
+                                <div class="error"
+                                  *ngIf="nominee.get('idProofNo')?.invalid && nominee.get('idProofNo')?.touched">
+                                  <span>ID Proof Number is required.</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                                <!-- Allocation -->
+                                <label for="allocation" class="form-label">Allocation %:</label>
+                                <!-- <input id="nomineeallocation" name="nomineeallocation" type="number"
+                                  formControlName="allocation" min="0" max="100" class="form-control"
+                                  pattern="^[1-9][0-9]*$" oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
+                                  placeholder="" appEmojiBlocker /> -->
+
+<input
+  id="nomineeallocation"
+  name="nomineeallocation"
+  type="number"
+  formControlName="allocation"
+  min="0"
+  max="100"
+  class="form-control"
+  pattern="^[1-9][0-9]*$"
+  oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
+  placeholder=""
+  appEmojiBlocker
+  (wheel)="$event.preventDefault()"
+/>
+
+                                <div class="error"
+                                  *ngIf="nominee.get('allocation')?.invalid && nominee.get('allocation')?.touched">
+                                  <span *ngIf="nominee.get('allocation')?.errors?.['required']">Allocation is
+                                    required.</span>
+                                  <span *ngIf="nominee.get('allocation')?.errors?.['min']">Minimum value is 0.</span>
+                                  <span *ngIf="nominee.get('allocation')?.errors?.['max']">Maximum value is 100.</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                                <div class="pan_details_align">
+                                  <!-- Same as Applicant Address -->
+                                  <input id="nomineeApplicantCheck" class="form-check-input" type="checkbox"
+                                    formControlName="sameAsApplicantAddress" />
+                                  <div class="upload_css">
+                                    <h5>Same as applicant address</h5>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12" *ngIf="i===0">
+                              <div class="nominee_field_align">
+                                <div class="pan_details_align">
+
+                                  <input id="isNomineeSOH" class="form-check-input" type="checkbox" name="isNomineeSOH"
+                                    formControlName="printInStatement" />
+                                  <div class="upload_css">
+                                    <h5>
+                                      Do you want to print name of nominee(s) in
+                                      your statement of account / holding?
+                                    </h5>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Address Fields -->
+                            <div class="row" *ngIf="!nominee.get('sameAsApplicantAddress')?.value">
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                  <label for="address1" class="form-label">Address Line 1:</label>
+                                  <input type="text" formControlName="address1" class="form-control" placeholder=""
+                                    maxlength="50" onkeypress="return /^[a-zA-Z ]*$/.test(event.key) "
+                                    appEmojiBlocker />
+                                  <div class="error"
+                                    *ngIf="nominee.get('address1')?.invalid && nominee.get('address1')?.touched">
+                                    <span>Address Line 1 is required.</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                  <label for="address2" class="form-label">Address Line 2:</label>
+                                  <input type="text" formControlName="address2" class="form-control" placeholder=""
+                                    maxlength="50" onkeypress="return /^[a-zA-Z ]*$/.test(event.key) "
+                                    appEmojiBlocker />
+                                  <div class="error"
+                                    *ngIf="nominee.get('address2')?.invalid && nominee.get('address2')?.touched">
+                                    <span>Address Line 2 is required.</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                  <label for="address3" class="form-label">Address Line 3:</label>
+                                  <input type="text" formControlName="address3" class="form-control" placeholder=""
+                                    maxlength="50" onkeypress="return /^[a-zA-Z ]*$/.test(event.key) "
+                                    appEmojiBlocker />
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                  <!-- (input)="onPincodeInput($event, 1)"
+  (change)="GetStateandCity()" -->
+                                  <label for="pincode" class="form-label">Pincode:</label>
+                                  <input type="text" formControlName="pincode" class="form-control" maxlength="10"
+                                    pattern="^[1-9][0-9]*$" placeholder="Pincode" />
+                                  <div class="error"
+                                    *ngIf="nominee.get('pincode')?.invalid && nominee.get('pincode')?.touched">
+                                    <span>Pincode is required.</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                <label>State:</label>
+                                <input type="text" formControlName="state" class="form-control" name="nomineeState"
+                                  placeholder="State" maxlength="30" disabled="true"
+                                  onkeypress="return /^[a-zA-Z ]*$/.test(event.key) " appEmojiBlocker />
+
+                                <div class="error"
+                                  *ngIf="nominee.get('state')?.invalid && nominee.get('state')?.touched">
+                                  <span>State is required.</span>
+                                </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                <label>City:</label>
+                                <input type="text" formControlName="city" class="form-control" maxlength="30"
+                                  placeholder="City" (keypress)="onKeyPress($event)"
+                                  onkeypress="return !/^\s$/.test(event.key) || event.target.value.length > 0 "
+                                  appEmojiBlocker />
+                                <div class="error" *ngIf="nominee.get('city')?.invalid && nominee.get('city')?.touched">
+                                  <span>City is required.</span>
+                                </div>
+                              </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Guardian Section -->
+                          <div class="row" *ngIf="nominee.get('isMinor')?.value">
+                            <h5>Guardian Details</h5>
+                            <!-- <h2 class="accordion-header">Guardian Details</h2> -->
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                              <label>Guardian First Name:</label>
+                              <input type="text" formControlName="guardianFirstName" class="form-control" placeholder=""
+                                (input)="
+            checkInput($event);
+          " (keypress)="onKeyPressNS($event)"
+                                onkeypress="return !/^\s$/.test(event.key) || event.target.value.length > 0 "
+                                maxlength="50" appEmojiBlocker />
+                              <div class="error"
+                                *ngIf="nominee.get('guardianFirstName')?.invalid && nominee.get('guardianFirstName')?.touched">
+                                <span *ngIf="nominee.get('guardianFirstName')?.errors?.['required']">Guardian First Name
+                                  is required.</span>
+                                <span *ngIf="nominee.get('guardianFirstName')?.errors?.['minlength']">Minimum 3
+                                  characters required.</span>
+                                <span *ngIf="nominee.get('guardianFirstName')?.errors?.['maxlength']">Maximum 50
+                                  characters allowed.</span>
+                              </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+<div class="nominee_field_align">
+                              <label>Guardian Last Name:</label>
+                              <input type="text" formControlName="guardianLastName" class="form-control" placeholder=""
+                                (input)="
+            checkInput($event);
+          " (keypress)="onKeyPressNS($event)"
+                                onkeypress="return !/^\s$/.test(event.key) || event.target.value.length > 0 "
+                                maxlength="50" appEmojiBlocker />
+                              <div class="error"
+                                *ngIf="nominee.get('guardianLastName')?.invalid && nominee.get('guardianLastName')?.touched">
+                                <span *ngIf="nominee.get('guardianLastName')?.errors?.['required']">Guardian Last Name
+                                  is required.</span>
+                                <span *ngIf="nominee.get('guardianLastName')?.errors?.['minlength']">Minimum 3
+                                  characters required.</span>
+                                <span *ngIf="nominee.get('guardianLastName')?.errors?.['maxlength']">Maximum 50
+                                  characters allowed.</span>
+                              </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                              <label>Guardian Mobile No.: </label>
+                              <input type="tel" formControlName="guardianMobile" class="form-control"       id="Guarobno"
+                                name="Guarobno" placeholder=""
+                                [attr.maxlength]="mobileMaxLength"    
+                                [attr.minlength]="mobileMinLength" inputmode="numeric" pattern="^[6-9][0-9]*$"
+                                oninput="if(!this.value.match('^[6-9][0-9]*$'))this.value='';" appEmojiBlocker />
+
+</div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                              <label>Guardian Email ID:</label>
+                              <input type="email" formControlName="guardianEmail" class="form-control" maxlength="50"
+                                appEmojiBlocker />
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                              <!-- Identity Proof -->
+                              <label>Guardian Proof of Identity Type:</label>
+
+                              <select formControlName="guardianidProofType" class="form-select">
+  <option
+    *ngFor="let title of (
+      nominee.get('nomineeAddressType')?.value === 'NRI'
+        ? NomineeOneProofResponse
+        : (NomineeOneProofResponse | slice:1:4)
+    )"
+    [value]="title.nom_id_poof">
+    {{ title.nom_id_poof }}
+  </option>
+</select>
+                              <div class="error"
+                                *ngIf="nominee.get('guardianidProofType')?.invalid && nominee.get('guardianidProofType')?.touched">
+                                <span>Guardian ID Proof Type is required.</span>
+                              </div>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                              <label>Guardian Identity Proof No.:</label>
+                              <input type="text" formControlName="guardianidProofNo" class="form-control" />
+                              <div class="error"
+                                *ngIf="nominee.get('guardianidProofNo')?.invalid && nominee.get('guardianidProofNo')?.touched">
+                                <span>Guardian ID Proof Number is required.</span>
+                              </div>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+<div class="nominee_field_align">
+                              <label>Guardian Relationship:</label>
+                              <select formControlName="guardianRelationship" class="form-select">
+                                <option *ngFor="let title of guardianListResponse" [value]="title.nom_guard_rel_master">
+                                  {{ title.nom_guard_rel_master }}</option>
+                              </select>
+                              <div class="error"
+                                *ngIf="nominee.get('guardianRelationship')?.invalid && nominee.get('guardianRelationship')?.touched">
+                                <span>Guardian Relationship is required.</span>
+                              </div>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                              <div class="nominee_field_align">
+                              <label>
+                                <input type="checkbox" formControlName="guardianSameAsApplicantAddress" />
+                                Guardian Same as applicant address
+                              </label>
+                              </div>
+                            </div>
+                  <div class="col-lg-6 col-md-6 col-12">
+                  <!-- DOB -->
+                  <!-- <label>Date of Birth:</label>
+                  <input type="date" formControlName="dob" class="form-control" /> -->
+                  <!-- class="date_alignment -->
+                  <div class="nominee_field_align">
+                  <label for="nomineedob" class="form-label">Date of Birth</label>
+
+
+                  <p-calendar
+                  formControlName="guardiandob"
+                  [readonlyInput]="true"
+                  [touchUI]="true"
+
+                  [maxDate]="minDate"
+                  [dataType]="'string'"
+                  dateFormat="dd/mm/yy"
+                  [showTime]="false"
+                  [id]="dateOfBirthId"
+                  class="calendar_cls">
+                  </p-calendar>
+
+
+                  <div class="error" *ngIf="nominee.get('dob')?.invalid && nominee.get('dob')?.touched">
+                  <span>Date of Birth is required.</span>
+                  </div>
+                  <!-- <span *ngIf="Nominee1DOB" class="red_warning"
+                  >Please select DOB</span
+                  > -->
+                  </div>
+
+                  </div>
+
+                            <!-- Guardian address fields only if not same as applicant -->
+                            <div class="row"
+                              *ngIf="!nominee.get('guardianSameAsApplicantAddress')?.value">
+
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                <label>Guardian Address Line 1:</label>
+                                <input type="text" formControlName="guardianAddress1" class="form-control"
+                                  placeholder="" maxlength="50" onkeypress="return /^[a-zA-Z ]*$/.test(event.key) "
+                                  appEmojiBlocker />
+                                <div class="error"
+                                  *ngIf="nominee.get('guardianAddress1')?.invalid && nominee.get('guardianAddress1')?.touched">
+                                  <span>Address Line 1 is required.</span>
+                                </div>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                <label>Guardian Address Line 2: </label>
+                                <input type="text" formControlName="guardianAddress2" class="form-control"
+                                  placeholder="" maxlength="50" onkeypress="return /^[a-zA-Z ]*$/.test(event.key) "
+                                  appEmojiBlocker />
+                                <div class="error"
+                                  *ngIf="nominee.get('guardianAddress2')?.invalid && nominee.get('guardianAddress2')?.touched">
+                                  <span>Address Line 2 is required.</span>
+                                </div>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                <label>Guardian Address Line 3:</label>
+                                <input type="text" formControlName="guardianAddress3" class="form-control"
+                                  placeholder="" maxlength="50" onkeypress="return /^[a-zA-Z ]*$/.test(event.key) "
+                                  appEmojiBlocker />
+                                  </div>
+                              </div>
+
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                <label>Guardian Pincode: </label>
+                                <input type="text" formControlName="guardianPincode" class="form-control" maxlength="10"
+                                  pattern="^[1-9][0-9]*$" placeholder="Pincode" />
+                                <div class="error"
+                                  *ngIf="nominee.get('guardianPincode')?.invalid && nominee.get('guardianPincode')?.touched">
+                                  <span>Pincode is required.</span>
+                                </div>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                <label>Guardian State: </label>
+                                <input type="text" formControlName="guardianState" class="form-control"
+                                  placeholder="State" maxlength="30" onkeypress="return /^[a-zA-Z ]*$/.test(event.key) "
+                                  appEmojiBlocker />
+                                <div class="error"
+                                  *ngIf="nominee.get('guardianState')?.invalid && nominee.get('guardianState')?.touched">
+                                  <span>State is required.</span>
+                                </div>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6 col-md-6 col-12">
+                                <div class="nominee_field_align">
+                                <label>Guardian City: </label>
+                                <input type="text" formControlName="guardianCity" class="form-control" maxlength="30"
+                                  placeholder="City" (keypress)="onKeyPress($event)"
+                                  onkeypress="return !/^\s$/.test(event.key) || event.target.value.length > 0 "
+                                  appEmojiBlocker />
+                                <div class="error"
+                                  *ngIf="nominee.get('guardianCity')?.invalid && nominee.get('guardianCity')?.touched">
+                                  <span>City is required.</span>
+                                </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Add Nominee Button -->
+                <div class="text-center my-2" *ngIf="nominees.length<10">
+                  <div class="btn_action_align">
+                    <div class="nominee_footer" (click)="addNominee()" [class.disabled]="nominees.length >= 10">
+                      <span>
+                        <!-- <img src="assets/images/diy/more.png" alt="" /> -->
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M7.50016 10H12.5002M10.0002 7.50004V12.5M3.3335 5.00004V4.16671C3.3335 3.94569 3.42129 3.73373 3.57757 3.57745C3.73385 3.42117 3.94582 3.33337 4.16683 3.33337H5.00016M9.16683 3.33337H10.8335M15.0002 3.33337H15.8335C16.0545 3.33337 16.2665 3.42117 16.4228 3.57745C16.579 3.73373 16.6668 3.94569 16.6668 4.16671V5.00004M16.6668 9.16671V10.8334M16.6668 15V15.8334C16.6668 16.0544 16.579 16.2663 16.4228 16.4226C16.2665 16.5789 16.0545 16.6667 15.8335 16.6667H15.0002M10.8335 16.6667H9.16683M5.00016 16.6667H4.16683C3.94582 16.6667 3.73385 16.5789 3.57757 16.4226C3.42129 16.2663 3.3335 16.0544 3.3335 15.8334V15M3.3335 10.8334V9.16671"
+                            stroke="#280071" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>Add Nominee</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-lg-12 col-md-12 col-12">
+                <div class="nominee_bottom_note">
+
+<div *ngIf="IsAnyNomineeMajor" class="nominee_select">
+  <div>
+    <label for="NomineeSelect" class="form-label">I hereby authorise that</label>
+  </div>
+
+<div>
+  <select
+    id="NomineeSelect"
+    class="form-select"
+    [(ngModel)]="NomineeSelect"
+    [ngModelOptions]="{ standalone: true }">
+
+    <option [ngValue]="null">Select nominee</option>
+
+    <ng-container *ngFor="let n of nominees.controls; let i = index">
+      <option
+        *ngIf="!n.get('isMinor')?.value && hasName(n)"
+        [ngValue]="{
+          id: i + 1,
+          name: fullName(n)
+        }">
+        {{ i + 1 }}. {{ fullName(n) }}
+      </option>
+    </ng-container>
+  </select>
+
+  </div>
+</div>
+
+<div *ngIf="IsAnyNomineeMajor" class="nominee_select">
+  <label class="form-label d-block">
+    nominee to operate my account on my behalf, in case of incapacitation.
+    He/She is authorised to encash my assets up to
+    <!-- Percentage input -->
+    <input type="text" class="form-control d-inline-block w-auto mx-1" placeholder="%" min="0"
+      max="100" step="0.01" [(ngModel)]="amountPercent" [ngModelOptions]="{ standalone: true }"
+      (input)="onPercentInput()" 
+      pattern="^[1-9][0-9]*$"
+      oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
+      appEmojiBlocker style="max-width: 100px;"/>
+    <span>% or ₹</span>
+    <input type="text" class="form-control d-inline-block w-auto mx-1" placeholder="Amount" min="0"
+      step="0.01" [(ngModel)]="amountRupees" [ngModelOptions]="{ standalone: true }"
+      (input)="onRupeesInput()"
+      pattern="^[1-9][0-9]*$"
+      oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"
+      style="max-width: 120px;"
+      appEmojiBlocker/>
+    <span>**Optional</span>
+  </label>
+</div>
+
+
+                  <!-- Inline validation messages (optional) -->
+
+<div  class="text-danger mt-2 font-5" style="FONT-SIZE: 12PX;" *ngIf="IsAnyNomineeMajor && amountPercent && (amountPercent < 0 || amountPercent > 100)">
+  Percentage must be between 0 and 100.
+</div>
+<div class="text-danger mt-1 font-5" style="FONT-SIZE: 12PX;" *ngIf="IsAnyNomineeMajor && amountRupees && amountRupees < 0">
+  Amount must be 0 or more.
+</div>
+<div class="text-danger mt-1 font-5" style="FONT-SIZE: 12PX;" *ngIf="IsAnyNomineeMajor && !amountPercent && !amountRupees">
+  Please enter either percentage or amount.
+</div>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <!-- <div class="text-center my-2">
+            <div class="btn_action_align">
+              <div *ngIf="visibleAcco rdions < 3" class="nominee_footer" (click)="addNominee()" [disabled]="nominees.length >= 10">
+                <span>
+                  <img src="assets/images/diy/more.png" alt="" />
+                </span>
+                <span>Add Nominee</span>
+              </div>
+
+            </div>
+          </div> -->
+
+          <div class="btn_align stickybtn_desk desktop_css">
+            <!-- <button
+              id="btn_opt"
+              class="btn_cls_outline p-0"
+              type="submit"
+              (click)="save_optoutstatus('Yes')"
+            >
+              I wish to Opt out
+            </button> -->
+            <button id="btn" type="submit" class="btn btn_cls" (click)="saveNominee();">
+              Save Nominee
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="btn_align stickybtn mobile_css">
+        <!-- <button
+          id="btn_opt"
+          class="btn_cls_outline p-0"
+          type="submit"
+          (click)="save_optoutstatus('Yes')"
+        >
+          I wish to Opt out
+        </button> -->
+        <button [disabled]="SaveNominee" (click)="saveNominee();" id="btn" type="submit" class="btn btn_cls">
+          Save Nominee
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Mobile OTP Box Modal -->
+<div id="mobileotp" tabindex="-1" aria-labelledby="otpLabel" aria-hidden="true" class="modal fade otpBox"
+  data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close"
+        (click)="clearMobileOTPFields(); clearTimer()">
+        <button #mobilecloseModal type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
+          (click)="clearMobileOTPFields(); clearTimer()"></button>
+      </div>
+      <div class="modal-body">
+        <p class="title_cls">OTP Verification</p>
+        <p>
+          You will receive OTP on
+          <span class="fw-bold">{{ this.sendOtp.mobile }}</span>
+        </p>
+        <div>
+          <!-- (ngModelChange)="checkIfAllOTPMobileFilled()" -->
+          <!-- [(ngModel)]="otpFieldMobile" -->
+          <ng-otp-input #otpMobileInput (onInputChange)="onOtpChangeMobile($event)"
+            [ngClass]="{ 'is-success': isRightOTP, 'is-error': isWrongOTP }" [config]="config" [autofocus]="true"
+            (keydown.enter)="getMobileOtpVerify(false)"></ng-otp-input>
+        </div>
+        <div *ngIf="isWrongOTP" class="mb-2 d-block">
+          <div class="otp_cls">
+            <img src="assets/images/diy/invalid_otp.png" alt="" />
+            <span class="alert_msg">Please enter the valid 6 digit OTP sent to your registered mobile
+              number.</span>
+          </div>
+        </div>
+        <div class="otp_align">
+          <div>
+            <span style="font-size: 14px">Didn't receive the OTP?</span>
+          </div>
+          <div>
+            <span style="font-weight: 400; font-size: 14px" *ngIf="timeroff">
+              Resend OTP : {{ displayMobile + " sec" }}
+            </span>
+            <span class="otp_confirmation" *ngIf="!timeroff" (click)="getMobileOtp(true)">
+              Resend OTP
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button [disabled]="isMobileVerifyBtn" (click)="getMobileOtpVerify(false)" type="button" class="btn btn_cls">
+          Verify
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<section aria-label="DigiLocker Aadhaar and PAN Verification" class="pan_details_form">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-12 p-0 p-sm-0 m-auto">
+        <div class="mobile_css">
+          <div class="header_padding">
+            <!-- <div (click)="gotoPan()" class="back_cls">
+              <img src="assets/images/diy/ChevronLeft.png" alt="" /> Back
+            </div> -->
+            <div class="help_faq_css">
+              <!-- *ngIf="this.RejectStatus != 'R'" (click)="BackToSelfie()" -->
+              <div>
+                <img
+                  src="assets/images/diy/digilocker_img.png"
+                  alt="DigiLocker logo"
+                  srcset=""
+                />
+              </div>
+              <div>
+                <button type="button" class="help_btn" (click)="faqHelpBtn('Digilocker')"
+                  aria-label="Need Help with DigiLocker — open help">
+                  Need Help?
+                </button>
+              </div>
+            </div>
+            <h1 class="visually-hidden">DigiLocker Verification</h1>
+            <p class="sub_title">Verify your Aadhaar & PAN via Digilocker</p>
+          </div>
+        </div>
+
+        <form aria-label="DigiLocker Verification Form" method="post" class="">
+          <div class="div">
+            <div class="col-lg-12 col-md-12 col-12 desktop_css">
+              <div class="header_padding">
+                <!-- <div class="help_faq_css">
+                  <div>
+                    <img
+                      src="assets/images/diy/digilocker_img.png"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                  <div>
+                    <div class="help_btn" (click)="faqHelpBtn('Digilocker')">
+                      Need Help?
+                    </div>
+                  </div>
+                </div>
+                <h1 class="visually-hidden">DigiLocker Verification</h1>
+                <p class="sub_title">
+                  Verify your Aadhaar & PAN via Digilocker
+                </p> -->
+
+                <div class="help_faq_css">
+                  <div class="desktop_align_header">
+                    <div>
+                      <div>
+                        <img
+                          src="assets/images/diy/digilocker_img.png"
+                          alt="DigiLocker logo" srcset=""
+                        />
+                      </div>
+                      <h1 class="visually-hidden">DigiLocker Verification</h1>
+                      <p class="sub_title">
+                        Verify your Aadhaar & PAN via Digilocker
+                      </p>
+                    </div>
+                    <div>
+                      <button type="button" class="help_btn" (click)="faqHelpBtn('Digilocker')"
+                        aria-label="Need Help with DigiLocker — open help">
+                        Need Help?
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="desktop_css">
+              <div class="line_css"></div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-12">
+              <div class="mobile_section">
+                <div class="desktop_align">
+                  <h2 class="main_heading">
+                    Enter Aadhaar number for <span style="text-transform: capitalize;">‘{{this.nameSubmitted}}’</span>
+                  </h2>
+
+                  <div>
+                    <img
+                      src="assets/images/diy/aadhar_card_sample_img.png"
+                      alt="Sample Aadhaar card" draggable="false"
+                    />
+                  </div>
+                  <p class="sub_heading">
+                    In the next step, OTP will be sent to your Aadhaar linked
+                    Mobile number
+                  </p>
+                </div>
+                <div class="digilocker_video_section">
+                  <div class="section">
+                    <p class="header">
+                      Select <span>Aadhaar and PAN</span> on the next screen
+                    </p>
+                    <div>
+                      <img
+                        src="assets/images/diy/digilocker_toogle_video.gif"
+                        alt="DigiLocker selection guide animation"
+                        draggable="false"
+                      />
+                    </div>
+                    <p class="bottom_text">
+                      Create a 6-digit M-PIN (for new DigiLocker users)
+                    </p>
+                  </div>
+                </div>
+                <div class="stickybtn_desk desktop_css">
+                  <button class="btn btn_cls" (click)="redirectDigiLocker()">
+                    Verify with Digilocker
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="stickybtn mobile_css">
+          <button class="btn btn_cls" (click)="redirectDigiLocker()">
+            Verify with Digilocker
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+<section aria-label="Email ID Verification — enter your email address" class="pan_details_form">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-12 p-0 p-sm-0 m-auto">
+                <div class="mobile_css">
+                    <div class="back_cls">
+                        <button type="button" class="back-link-btn" (click)="emailScreen()"
+                            aria-label="Go back to previous screen"
+                            style="background:none;border:none;padding:0;cursor:pointer;">
+                            <img src="assets/images/diy/ChevronLeft.png" alt="" aria-hidden="true" /> Back
+                        </button>
+                        <div class="d-flex flex-column align-items-start gap-2">
+                            <h5 class="">Email ID Verification</h5>
+                            <p class="sub_title">All communication related to your account will be sent to this email
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <form aria-label="Email ID Entry Form" method="post" class="">
+                    <div class="div">
+                        <div class="col-lg-12 col-md-12 col-12 desktop_css">
+                            <div class="header_padding">
+                                <div class="help_faq_css">
+                                    <button type="button" class="back-link-btn" (click)="emailScreen()"
+                                        aria-label="Go back to previous screen"
+                                        style="background:none;border:none;padding:0;cursor:pointer;">
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_0_10804)">
+                                                <path d="M5 12.5H19" stroke="black" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M5 12.5L11 18.5" stroke="black" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M5 12.5L11 6.5" stroke="black" stroke-width="1.5"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_0_10804">
+                                                    <rect width="24" height="24" fill="white"
+                                                        transform="translate(0 0.5)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </button>
+                                    <div class="d-flex flex-column gap-2">
+                                        <h5>Email ID Verification</h5>
+                                        <p class="sub_title">
+                                            All communication related to your account will be sent to this email
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="desktop_css">
+                            <div class="line_css"></div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="mobile_section">
+                                <div class="desktop_align">
+                                    <div class="email_screen">
+                                        <div class="email_form_css">
+                                            <div class="email_form">
+                                                <div><label for="emailEntryInp">Email ID</label></div>
+                                                <div>
+                                                    <input id="emailEntryInp" type="text" autocomplete="email"
+                                                        aria-label="Email Address" type="email" name="email"
+                                                        placeholder="example@gmail.com" [(ngModel)]="sendEmailOtp.email"
+                                                        (input)="validateEmail()" (keydown.enter)="getEmailOtp(false)"
+                                                        aria-required="true">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stickybtn_desk desktop_css">
+                                    <span id="emailSendOtpHintDesk" class="visually-hidden">Enter a valid email address
+                                        to enable Send OTP.</span>
+                                    <button class="btn btn_cls" (click)="getEmailOtp(false)"
+                                        [attr.aria-disabled]="isEmailDisableBtn" [disabled]="isEmailDisableBtn"
+                                        aria-describedby="emailSendOtpHintDesk">
+                                        Send OTP
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="stickybtn mobile_css">
+                    <span id="emailSendOtpHintMob" class="visually-hidden">Enter a valid email address to enable Send
+                        OTP.</span>
+                    <button class="btn btn_cls" (click)="getEmailOtp(false)" [attr.aria-disabled]="isEmailDisableBtn"
+                        [disabled]="isEmailDisableBtn" aria-describedby="emailSendOtpHintMob">
+                        Send OTP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
