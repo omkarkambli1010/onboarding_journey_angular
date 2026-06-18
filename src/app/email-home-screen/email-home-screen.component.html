@@ -36,7 +36,7 @@
               <div class="mobile_section">
                 <div class="desktop_align">
                   <div class="email_screen">
-                    <!-- <div class="google_btn" (click)="signInWithGoogle()"> -->
+                    <!-- <div class="google_btn" (click)="signInWithGoogle()" (keydown.enter)="signInWithGoogle()" (keydown.space)="signInWithGoogle()" role="button" tabindex="0"> -->
                     <button type="button" class="google_btn" (click)="signInWithGoogle()"
                       aria-label="Continue with Google — sign in with your Google account">
                       <span>
@@ -52,7 +52,7 @@
                       <img class="" src="assets/images/diy/or_sec_img_mobile.png" alt="" aria-hidden="true" />
                     </div>
                     <div class="email_text_section">
-                      <h3 (click)="emailTextPage()" (keydown.enter)="emailTextPage()" (keydown.space)="emailTextPage()" role="button" tabindex="0" style="cursor: pointer">
+                      <h3 (click)="emailTextPage()" style="cursor: pointer">
                         Use another E-mail ID
                       </h3>
                       <h3>(Require OTP Verification)</h3>

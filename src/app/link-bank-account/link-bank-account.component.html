@@ -88,7 +88,7 @@
               <div *ngIf="this.utm_source != 'PROPRIETOR'" class="col-lg-12 col-md-12 col-12">
                 <div class="square-box">
                   <span class="status">Recommended</span>
-                  <div class="pan_details_align" (click)="enterPaymentGateway()">
+                  <div class="pan_details_align" (click)="enterPaymentGateway()" (keydown.enter)="enterPaymentGateway()" (keydown.space)="enterPaymentGateway()" role="button" tabindex="0">
                     <input id="uploadPanRadio" type="radio" name="radio-button_one" class="radio-button" />
                     <div class="upload_css">
                       <h5>Verify with UPI</h5>

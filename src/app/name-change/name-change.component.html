@@ -4,7 +4,7 @@
       <div class="col-lg-10 col-12 m-auto">
         <div class="mobile_css">
           <div class="back_cls">
-            <div  *ngIf="this.RejectStatus != 'R'"  (click)="redirectSignature()">
+            <div  *ngIf="this.RejectStatus != 'R'"  (click)="redirectSignature()" (keydown.enter)="redirectSignature()" (keydown.space)="redirectSignature()" role="button" tabindex="0">
               <img src="assets/images/diy/ChevronLeft.png" alt="" aria-hidden="true" /> Back
             </div>
             <div *ngIf="this.RejectStatus === 'R'" class="back_cls2"></div>
@@ -21,7 +21,7 @@
           <div class="">
             <div class="col-lg-12 col-md-12 col-12 desktop_css">
               <div class="d-flex align-items-start gap-2">
-                <div *ngIf="this.RejectStatus != 'R'"  (click)="redirectSignature()">
+                <div *ngIf="this.RejectStatus != 'R'"  (click)="redirectSignature()" (keydown.enter)="redirectSignature()" (keydown.space)="redirectSignature()" role="button" tabindex="0">
                   <span
                     > <svg
                       width="24"
@@ -193,7 +193,7 @@
         aria-label="Close"
         (click)="removeModal()"
       >
-        <h1 class="modal-title fs-5" id="uploadBankStatementLabel"></h1>
+        <h2 class="modal-title fs-5" id="uploadBankStatementLabel"></h2>
         <button
           type="button"
           class="btn-horizontal-line"
@@ -232,8 +232,7 @@
               (change)="fileChangeEvent($event)"
               (click)="setCaptureEvent('environment')"
               data-bs-target="#uploadBankStateUpload"
-              data-bs-toggle="modal"
-            />
+              data-bs-toggle="modal" aria-label="Take a photo of your document" />
           </div>
           <div style="position: relative; display: inline-block">
             <img
@@ -258,8 +257,7 @@
               (click)="setCaptureEvent('upload')"
               (change)="fileChangeEvent($event)"
               data-bs-target="#uploadBankStateUpload"
-              data-bs-toggle="modal"
-            />
+              data-bs-toggle="modal" aria-label="Upload a document file" />
           </div>
         </div>
         <div class="file_type_css">
@@ -297,7 +295,7 @@
         aria-label="Close"
         (click)="removeModal()"
       >
-        <h1 class="modal-title fs-5" id="uploadBankStateUploadLabel"></h1>
+        <h2 class="modal-title fs-5" id="uploadBankStateUploadLabel"></h2>
         <button
           type="button"
           class="btn-horizontal-line"
@@ -359,8 +357,7 @@
                 type="file"
                 accept="image/*"
                 (change)="fileChangeEvent($event)"
-                style="display: none"
-              />
+                style="display: none" aria-label="Upload a document file" />
             </label>
             <label
               *ngIf="imageChangedEvent && capture_event !== 'user'"
@@ -371,8 +368,7 @@
                 type="file"
                 accept="image/*"
                 (change)="fileChangeEvent($event)"
-                style="display: none"
-              />
+                style="display: none" aria-label="Upload a document file" />
             </label>
             <label
               *ngIf="imageChangedEvent && capture_event == 'user'"
@@ -384,8 +380,7 @@
                 capture="user"
                 accept="image/*"
                 (change)="fileChangeEvent($event)"
-                style="display: none"
-              />
+                style="display: none" aria-label="Take a photo" />
             </label>
             <button
               [attr.aria-disabled]="!imageChangedEvent && !FFF"
@@ -421,7 +416,7 @@
         aria-label="Close"
         (click)="removeModal()"
       >
-        <h1 class="modal-title fs-5" id="uploadBankStateBgLabel"></h1>
+        <h2 class="modal-title fs-5" id="uploadBankStateBgLabel"></h2>
         <button
           type="button"
           class="btn-horizontal-line"

@@ -179,7 +179,8 @@
   line-height: normal;
 } */
 
-.pan_details_form .help_faq_css h1 {
+.pan_details_form .help_faq_css h1,
+.pan_details_form .help_faq_css h2 {
   color: #222;
   font-size: 18px;
   font-weight: 600;
@@ -433,7 +434,8 @@
     line-height: normal;
   } */
 
-  .pan_details_form .help_faq_css h1 {
+  .pan_details_form .help_faq_css h1,
+  .pan_details_form .help_faq_css h2 {
     color: #2b2b2b;
     font-size: 16px;
     font-weight: 600;

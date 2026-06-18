@@ -397,3 +397,7 @@
     overflow: unset;
   }
 }
+/* Promote primary headings h5 -> h2/h3 for correct heading order; preserve original default-h5 size */
+.page-heading-sm {
+  font-size: 1.25rem;
+}

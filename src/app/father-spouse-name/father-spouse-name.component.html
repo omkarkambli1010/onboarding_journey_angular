@@ -1,3 +1,4 @@
+<h1 class="visually-hidden">Details required to finish KYC</h1>
 <section aria-label="KYC Details — Father or Spouse Name" class="pan_details_form">
   <div class="container">
     <div class="row">
@@ -12,7 +13,7 @@
             <div *ngIf="this.RejectStatus === 'R'" class="back_cls2"></div>
 
             <div class="d-flex flex-column align-items-start gap-2">
-              <h5>Details required to finish KYC</h5>
+              <h2 class="page-heading-sm">Details required to finish KYC</h2>
               <p class="sub_title">It's a mandatory requirement</p>
             </div>
           </div>
@@ -43,7 +44,7 @@
                   </span>
                 </div>
                 <div class="d-flex flex-column align-items-start gap-2">
-                  <h5>Details required to finish KYC</h5>
+                  <h2 class="page-heading-sm">Details required to finish KYC</h2>
                   <p class="sub_title">It's a mandatory requirement</p>
                 </div>
               </div>
@@ -57,7 +58,7 @@
                   </div>
                   <div>
                     <input type="text" class="form-control upper" id="Father" aria-label="Enter Father or Spouse Name"
-                      aria-required="true" name="Father" placeholder="Enter Father/Spouse Name"
+                      aria-required="true" autocomplete="off" name="Father" placeholder="Enter Father/Spouse Name"
                       [(ngModel)]="kycParents.fatherName" (input)="checkInput($event)" (ngModelChange)="
                         updateFatherName(kycParents.fatherName, 'change')
                       " (focusout)="

@@ -90,7 +90,7 @@
 
         aria-label="Close"
       >
-        <h1 class="modal-title fs-5" id="AggregatorCallLabel"></h1>
+        <h2 class="modal-title fs-5" id="AggregatorCallLabel"></h2>
         <img src="assets/images/diy/align_face_icon.png" alt="Align Face Icon" style="align-self: left" />
 
         <button
@@ -143,7 +143,7 @@
 
         aria-label="Close"
       >
-        <h1 class="modal-title fs-5" id="documentSelectLabel"></h1>
+        <h2 class="modal-title fs-5" id="documentSelectLabel"></h2>
         <button
           type="button"
           class="btn-horizontal-line"
@@ -210,7 +210,7 @@
         data-bs-dismiss="modal"
         aria-label="Close"
       >
-        <h1 class="modal-title fs-5" id="uploadBankStatementLabel"></h1>
+        <h2 class="modal-title fs-5" id="uploadBankStatementLabel"></h2>
         <button
           type="button"
           class="btn-horizontal-line"
@@ -248,8 +248,7 @@
               (click)="setCaptureEvent('environment')"
               (click)="resetExistingImage()"
               data-bs-target="#uploadBankStateUpload"
-              data-bs-toggle="modal"
-            />
+              data-bs-toggle="modal" aria-label="Take a photo of your document" />
           </div>
           <div style="position: relative; display: inline-block">
             <img
@@ -273,8 +272,7 @@
               (click)="setCaptureEvent('upload')"
               (click)="resetExistingImage()"
               data-bs-target="#uploadBankStateUpload"
-              data-bs-toggle="modal"
-            />
+              data-bs-toggle="modal" aria-label="Upload a document file" />
           </div>
         </div>
         <div class="file_type_css">
@@ -313,7 +311,7 @@
         data-bs-dismiss="modal"
         aria-label="Close"
       >
-        <h1 class="modal-title fs-5" id="uploadBankStateUploadLabel"></h1>
+        <h2 class="modal-title fs-5" id="uploadBankStateUploadLabel"></h2>
         <button
           type="button"
           class="btn-horizontal-line"
@@ -378,8 +376,7 @@
               type="file"
               accept="image/*,.pdf"
               (change)="fileChangeEvent($event)"
-              style="display: none"
-            />
+              style="display: none" aria-label="Upload a document file" />
           </label>
           <label
             *ngIf="imageChangedEvent && capture_event !== 'user'"
@@ -390,8 +387,7 @@
               type="file"
               accept="image/*,.pdf"
               (change)="fileChangeEvent($event)"
-              style="display: none"
-            />
+              style="display: none" aria-label="Upload a document file" />
           </label>
           <label
             *ngIf="imageChangedEvent && capture_event == 'user'"
@@ -403,8 +399,7 @@
               capture="user"
               accept="image/*,.pdf"
               (change)="fileChangeEvent($event)"
-              style="display: none"
-            />
+              style="display: none" aria-label="Take a photo" />
           </label>
           <button
             [attr.aria-disabled]="!imageChangedEvent && !FFF"
@@ -440,7 +435,7 @@
         data-bs-dismiss="modal"
         aria-label="Close"
       >
-        <h1 class="modal-title fs-5" id="uploadBankStateUploadLabel"></h1>
+        <h2 class="modal-title fs-5" id="uploadBankStateUploadLabel"></h2>
         <button
           type="button"
           class="btn-horizontal-line"
@@ -505,8 +500,7 @@
               type="file"
               accept="image/*,.pdf"
               (change)="fileChangeEvent($event)"
-              style="display: none"
-            />
+              style="display: none" aria-label="Upload a document file" />
           </label>
           <label
             *ngIf="imageChangedEvent && capture_event !== 'user'"
@@ -517,8 +511,7 @@
               type="file"
               accept="image/*,.pdf"
               (change)="fileChangeEvent($event)"
-              style="display: none"
-            />
+              style="display: none" aria-label="Upload a document file" />
           </label>
           <label
             *ngIf="imageChangedEvent && capture_event == 'user'"
@@ -530,8 +523,7 @@
               capture="user"
               accept="image/*,.pdf"
               (change)="fileChangeEvent($event)"
-              style="display: none"
-            />
+              style="display: none" aria-label="Take a photo" />
           </label>
           <button
             [attr.aria-disabled]="!imageChangedEvent && !FFF"
@@ -567,7 +559,7 @@
         data-bs-dismiss="modal"
         aria-label="Close"
       >
-        <h1 class="modal-title fs-5" id="uploadBankStateBgLabel"></h1>
+        <h2 class="modal-title fs-5" id="uploadBankStateBgLabel"></h2>
         <button
           type="button"
           class="btn-horizontal-line"
@@ -662,7 +654,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block">
-        <h1 class="modal-title fs-5" id="AggFailLabel"></h1>
+        <h2 class="modal-title fs-5" id="AggFailLabel"></h2>
 
         <button
           type="button"

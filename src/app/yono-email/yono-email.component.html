@@ -4,7 +4,7 @@
       <div class="col-lg-10 col-12 m-auto">
         <div class="back_cls">
 
-          <div *ngIf="this.RejectStatus != 'R'" (click)="BackToYonoMobile();  clearEmailOTPFields(); clearTimer()">
+          <div *ngIf="this.RejectStatus != 'R'" (click)="BackToYonoMobile();  clearEmailOTPFields(); clearTimer()" (keydown.enter)="BackToYonoMobile();  clearEmailOTPFields(); clearTimer()" (keydown.space)="BackToYonoMobile();  clearEmailOTPFields(); clearTimer()" role="button" tabindex="0">
             <img src="assets/images/diy/ChevronLeft.png" alt="" aria-hidden="true" /> Back
           </div>
 
@@ -38,7 +38,7 @@
       <div class="col-lg-10 col-12 m-auto">
         <div class="back_cls">
 
-          <div (click)="BackToYonoEmail();  clearEmailOTPFields(); clearTimer()" class="d-none">
+          <div (click)="BackToYonoEmail();  clearEmailOTPFields(); clearTimer()" class="d-none" (keydown.enter)="BackToYonoEmail();  clearEmailOTPFields(); clearTimer()" (keydown.space)="BackToYonoEmail();  clearEmailOTPFields(); clearTimer()" role="button" tabindex="0">
             <img src="assets/images/diy/ChevronLeft.png" alt="" aria-hidden="true" /> Back
           </div>
 
@@ -174,7 +174,7 @@
           <div>
             <span style="font-weight: 400; font-size: 14px" *ngIf="timeroff1">Resend OTP : {{ displayEmail + " sec" }}
             </span>
-            <span class="otp_confirmation" *ngIf="!timeroff1" (click)="getEmailOtp(true)">Resend OTP
+            <span class="otp_confirmation" *ngIf="!timeroff1" (click)="getEmailOtp(true)" (keydown.enter)="getEmailOtp(true)" (keydown.space)="getEmailOtp(true)" role="button" tabindex="0">Resend OTP
             </span>
           </div>
         </div>

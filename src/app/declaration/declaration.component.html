@@ -146,7 +146,7 @@
                   </div>
                 </div>
                 <div class="dropdown dropdown_cls" data-bs-target="#fundcycle" data-bs-toggle="modal"
-                  (click)="stopPropagation($event)">
+                  (click)="stopPropagation($event)" (keydown.enter)="stopPropagation($event)" (keydown.space)="stopPropagation($event)" role="button" tabindex="0">
                   <button class="btn dropdown-toggle nowrap" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false" aria-expanded="false"
                     [attr.aria-label]="'Change fund settlement cycle, currently ' + selectedOption.Days">
@@ -226,7 +226,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="tradingprefLabel">Trading preference acceptance</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="tradingprefLabel">Trading preference acceptance</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -279,7 +279,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="helpscreenLabel">Help information</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="helpscreenLabel">Help information</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -302,7 +302,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block p-3 p-sm-0" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="fundcycleLabel">Fund settlement cycle</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="fundcycleLabel">Fund settlement cycle</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -345,7 +345,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="termsLabel">Terms and Conditions</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="termsLabel">Terms and Conditions</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -370,7 +370,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="politicalexposeLabel">Politically exposed person information</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="politicalexposeLabel">Politically exposed person information</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -400,7 +400,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-         <h1 class="modal-title fs-5 visually-hidden" id="taxpayerLabel">Tax payer declaration</h1>
+         <h2 class="modal-title fs-5 visually-hidden" id="taxpayerLabel">Tax payer declaration</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -424,7 +424,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-       <h1 class="modal-title fs-5 visually-hidden" id="helpscreenAltLabel">Help information</h1>
+       <h2 class="modal-title fs-5 visually-hidden" id="helpscreenAltLabel">Help information</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -531,7 +531,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-          <h1 class="modal-title fs-5 visually-hidden" id="tradingprefAltLabel">Trading preference acceptance</h1>
+          <h2 class="modal-title fs-5 visually-hidden" id="tradingprefAltLabel">Trading preference acceptance</h2>
           <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
             (click)="removeModal()"></button>
         </div>

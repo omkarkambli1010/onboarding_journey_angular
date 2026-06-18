@@ -86,7 +86,7 @@ export class EmailHomeOtpScreenComponent {
     private navService: NavigationService,
     private chCookie: CookieService,
     private MoengageService: MoengagesdkService,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
   ) { }
 
   ngOnInit(): void {

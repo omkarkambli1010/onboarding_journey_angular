@@ -86,7 +86,7 @@
                 <div class="bank_box" [ngClass]="{
                     highlight: bankList.selected,
                     deselected: !bankList.selected
-                  }" (click)="redirectToFillDetails(bankList)">
+                  }" (click)="redirectToFillDetails(bankList)" (keydown.enter)="redirectToFillDetails(bankList)" (keydown.space)="redirectToFillDetails(bankList)" role="button" tabindex="0">
                   <img src="{{ bankList.BankLogo }}" alt="bank-logo" />
                   <p>{{ bankList.BankName }}</p>
                 </div>
@@ -237,7 +237,7 @@
                             'fa-eye-slash': !fieldTextType,
                             'fa-eye': fieldTextType,
                           }" id="togglePassword" aria-label="Toggle account number visibility"
-                          (click)="toggleFieldTextType()"></span>
+                          (click)="toggleFieldTextType()" (keydown.enter)="toggleFieldTextType()" (keydown.space)="toggleFieldTextType()" role="button" tabindex="0"></span>
                       </div>
 
                       <span *ngIf="ACbankValidation" class="red_warning">Please enter a valid Account number consisting
@@ -326,7 +326,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="invalidbankdetailsLabel">Invalid bank details</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="invalidbankdetailsLabel">Invalid bank details</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -359,7 +359,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="myModalLabel">Bank verification status</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="myModalLabel">Bank verification status</h2>
         <button type="button" class="btn-horizontal-line" id="myModalClose" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -392,7 +392,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" aria-label="Close">
-        <h1 class="modal-title fs-5 visually-hidden" id="verifysuccessLabel">Bank account verified</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="verifysuccessLabel">Bank account verified</h2>
         <button type="button" class="btn-horizontal-line" id="verifySuccessClose" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -420,7 +420,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="uploadBankStatementLabel">Upload bank statement</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="uploadBankStatementLabel">Upload bank statement</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -444,7 +444,7 @@
                 cursor: pointer;
               " type="file" capture="environment" accept="image/*" (change)="fileChangeEvent($event)"
               (click)="setCaptureEvent('environment')" data-bs-target="#uploadBankStateUpload"
-              (click)="resetExistingImage()" data-bs-toggle="modal" aria-required="true" />
+              (click)="resetExistingImage()" data-bs-toggle="modal" aria-required="true" aria-label="Take a photo of your document" />
           </div>
           <div style="position: relative; display: inline-block">
             <img src="assets/images/diy/upload_img.png" alt="Upload Image" style="cursor: pointer" role="img" />
@@ -458,7 +458,7 @@
                 cursor: pointer;
               " type="file" accept="image/*" (change)="fileChangeEvent($event)" (click)="setCaptureEvent('upload')"
               data-bs-target="#uploadBankStateUpload" (click)="resetExistingImage()" data-bs-toggle="modal"
-              aria-required="true" />
+              aria-required="true" aria-label="Upload a document file" />
           </div>
         </div>
         <div class="file_type_css">
@@ -481,7 +481,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="uploadBankStateUploadLabel">Upload bank statement preview</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="uploadBankStateUploadLabel">Upload bank statement preview</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
@@ -521,19 +521,19 @@
           <label *ngIf="!imageChangedEvent" class="btn btn_cls_outline p-0" for="uploadImageFile" aria-hidden="true">
             Upload Image
             <input type="file" accept="image/*" (change)="fileChangeEvent($event)" style="display: none"
-              id="uploadImageFile" aria-describedby="uploadImageFile" />
+              id="uploadImageFile" aria-describedby="uploadImageFile" aria-label="Upload a document file" />
           </label>
           <label *ngIf="imageChangedEvent && capture_event !== 'user'" class="btn btn_cls_outline p-0"
             for="captureEvent" aria-hidden="true">
             Re-Upload Image
             <input type="file" accept="image/*" (change)="fileChangeEvent($event)" style="display: none"
-              aria-describedby="captureEvent" />
+              aria-describedby="captureEvent" aria-label="Upload a document file" />
           </label>
           <label *ngIf="imageChangedEvent && capture_event == 'user'" class="btn btn_cls_outline p-0"
             for="ImageChangeEvent" aria-hidden="true">
             Re-Upload Image
             <input type="file" capture="user" accept="image/*" (change)="fileChangeEvent($event)" style="display: none"
-              id="ImageChangeEvent" />
+              id="ImageChangeEvent" aria-label="Take a photo" />
           </label>
           <button [attr.aria-disabled]="!imageChangedEvent && !FFF" [disabled]="!imageChangedEvent && !FFF"
             type="button" class="btn btn_cls" data-bs-target="#uploadBankStateBg" data-bs-toggle="modal"
@@ -552,7 +552,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header d-block" data-bs-dismiss="modal" aria-label="Close" (click)="removeModal()">
-        <h1 class="modal-title fs-5 visually-hidden" id="uploadBankStateBgLabel">Confirm bank statement</h1>
+        <h2 class="modal-title fs-5 visually-hidden" id="uploadBankStateBgLabel">Confirm bank statement</h2>
         <button type="button" class="btn-horizontal-line" data-bs-dismiss="modal" aria-label="Close"
           (click)="removeModal()"></button>
       </div>
